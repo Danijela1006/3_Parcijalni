@@ -52,7 +52,7 @@ public class PolaznikTest {
     @Test
     void testGetPolaznikById() throws Exception {
         Long polaznikId = 1L;
-        PolaznikDto poalznikDto = new PolaznikDto("Bruno", "Podrug");
+        PolaznikDto poalznikDto = new PolaznikDto("Iva", "Jukić");
         when(polaznikService.findById(polaznikId)).thenReturn(Optional.of(poalznikDto));
 
         PolaznikDto result = polaznikController.getById(polaznikId);

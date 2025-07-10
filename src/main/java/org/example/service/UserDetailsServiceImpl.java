@@ -24,9 +24,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserInfo user = userRepository.findByUsername(username);
         if(user == null){
             log.error("Username not found: " + username);
-            throw new UsernameNotFoundException("could not found user..!!");
+            throw new UsernameNotFoundException("could not found user...!");
         }
-        log.info("User Authenticated Successfully..!!!");
+        log.info("User Authenticated Successfully...!!");
         return new CustomUserDetails(user);
     }
 }

@@ -13,8 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.hamcrest.Matchers.*;
 
@@ -62,8 +60,8 @@ public class PolaznikIntegrationTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(5)))
-                .andExpect(jsonPath("$[0].ime", is("Ante")))
-                .andExpect(jsonPath("$[0].prezime", is("Antic")));
+                .andExpect(jsonPath("$[0].ime", is("Ornela")))
+                .andExpect(jsonPath("$[0].prezime", is("Horvat")));
     }
 
     @Test
@@ -72,7 +70,7 @@ public class PolaznikIntegrationTest {
                         .header("Authorization", "Bearer " + accessToken)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.ime", is("Ivo")))
-                .andExpect(jsonPath("$.prezime", is("Ivic")));
+                .andExpect(jsonPath("$.ime", is("Ana")))
+                .andExpect(jsonPath("$.prezime", is("Kolar")));
     }
 }

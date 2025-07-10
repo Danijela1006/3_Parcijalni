@@ -5,8 +5,6 @@ public class PolaznikDto {
 
     private String prezime;
 
-
-
     public String getIme() {
         return ime;
     }
